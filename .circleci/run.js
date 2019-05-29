@@ -38,7 +38,7 @@ const isInDirectoryRoot = allProjects => project => allProjects.includes(project
 
 
 
-  const directoriesToTriggerAJob = modifiedDirectories.filter(isInDirectoryRoot(directoriesOnRoot));
+  const directoriesToTriggerAJob = modifiedProjects.filter(isInDirectoryRoot(directoriesOnRoot));
   console.log("directoriesToTriggerAJob")
   console.log(directoriesToTriggerAJob)
   directoriesToTriggerAJob.forEach(launchADirectoryJob);
