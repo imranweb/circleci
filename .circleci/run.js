@@ -26,20 +26,20 @@ const isInDirectoryRoot = allProjects => project => allProjects.includes(project
 ;(() => {
   console.log(CIRCLE_COMPARE_URL)
   console.log(process.env)
-  // const allProjects = readFileContent("./.circleci/projects.txt");
-  // const modifiedProjects = allProjects.filter(isModified);
-  // // .forEach(isInDirectoryRoot(allProjects))
-  // exec('git diff --no-commit-id --name-only | sort -u | uniq > testing')
-  // console.log(readFileContent('testing'))
-  // console.log(modifiedProjects)
+  const allProjects = readFileContent("./.circleci/projects.txt");
+  const modifiedProjects = allProjects.filter(isModified);
+  // .forEach(isInDirectoryRoot(allProjects))
+  exec('git diff --no-commit-id --name-only | sort -u | uniq > testing')
+  console.log(readFileContent('testing'))
+  console.log(modifiedProjects)
 
 
 
 
 
 
-  // const directoriesToTriggerAJob = modifiedDirectories.filter(isInDirectoryRoot(directoriesOnRoot));
-  // console.log("directoriesToTriggerAJob")
-  // console.log(directoriesToTriggerAJob)
-  // directoriesToTriggerAJob.forEach(launchADirectoryJob);
+  const directoriesToTriggerAJob = modifiedDirectories.filter(isInDirectoryRoot(directoriesOnRoot));
+  console.log("directoriesToTriggerAJob")
+  console.log(directoriesToTriggerAJob)
+  directoriesToTriggerAJob.forEach(launchADirectoryJob);
 })();
